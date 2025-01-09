@@ -1,0 +1,19 @@
+/* 우리가 만든 스타일을 여러번 사용할 경우 module화 */
+
+/* 각 구역마다 동일한 여백이 존재함 */
+.mgt-sm {
+    margin-top: 25px;
+    /* 마진 탑 스몰 */
+}
+
+.mgt-lg {
+    margin-top: 50px;
+    /* 마진 탑 라지 */
+}
+
+.heading {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    color: black;
+    font-weight: 900;
+}

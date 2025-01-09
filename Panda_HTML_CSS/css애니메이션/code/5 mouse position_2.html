@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style4_2.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>x : <span id="x"></span>, y : <span id="y"></span></h1>
+    <div id="cursor"></div>
+
+    <script>
+        window.addEventListener("mousemove", 마우스추적);
+        var x = document.querySelector("#x");
+        var y = document.querySelector("#y");
+        var cursor = document.querySelector("#cursor");
+
+        function 마우스추적(evnet) {
+            x.innerHTML = evnet.clientX;
+            y.innerHTML = evnet.clientY;
+            cursor.style.top = (evnet.clientY - 25) + "px";
+            // css사용가능한 크기(px, em 등 부여해줘야함)
+            cursor.style.left = (event.clientX - 25) + "px";
+        }
+    </script>
+</body>
+
+</html>

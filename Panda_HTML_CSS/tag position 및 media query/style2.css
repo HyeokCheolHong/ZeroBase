@@ -1,0 +1,31 @@
+.box {
+    width: 100%;
+    height: 100px;
+    border: 4px solid red;
+}
+
+
+/* media query는 css 젤 마지막 사용 */
+@media screen and (max-width: 1260px) {
+
+    /* view port 1260이하 */
+    .box {
+        background-color: red;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* view port 768이하 */
+    .box {
+        background-color: blue;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    /* view port 576이하 */
+    .box {
+        background-color: green;
+    }
+}

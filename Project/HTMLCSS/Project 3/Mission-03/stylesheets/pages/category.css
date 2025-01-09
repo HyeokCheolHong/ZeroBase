@@ -1,0 +1,213 @@
+/* 카테고리별 추천 광고상품 */
+
+body,
+head {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* 교축 방향 정렬 */
+    flex-direction: column;
+}
+
+.main-category {
+    width: 1250px;
+}
+
+/* 생활용품 및 주방용품 바로가기 링크 스타일링 */
+.shortcut-text {
+    position: relative;
+    /* ::after의 위치 기준이 됩니다 */
+    padding-right: 20px;
+    /* 이미지와 텍스트 사이의 공간을 확보 */
+    display: inline-block;
+    /* 혹은 다른 레이아웃을 위한 display 속성 값 */
+    text-decoration: none;
+    /* 링크 밑줄 제거 */
+    color: var(--color-gray-500);
+    /* 링크 색상 설정 */
+}
+
+.shortcut-text::after {
+    content: "";
+    /* 의사 요소에는 내용이 필요하지만, 배경 이미지만 필요하므로 빈 문자열 설정 */
+    position: absolute;
+    /* 부모 요소(.shortcut-text) 대비 절대 위치 */
+    right: 0;
+    /* 오른쪽 정렬 */
+    top: 50%;
+    /* 상단에서 50% 위치에 배치 */
+    transform: translateY(-50%);
+    /* Y축 기준으로 -50%만큼 이동하여 중앙 정렬 */
+    width: 10px;
+    /* 배경 이미지의 너비 */
+    height: 16px;
+    /* 배경 이미지의 높이 */
+    background-image: url('../../assets/icon/angle-right-default.svg');
+    /* 배경 이미지 설정 */
+    background-size: cover;
+    /* 배경 이미지 사이즈 조절 */
+}
+
+.category1,
+.category2 {
+    display: flex;
+    /* flex-flow: row wrap; */
+    width: 1000px;
+    height: 100%;
+    position: relative;
+    margin-left: 10%;
+    border-top: 1px solid var(--color-gray-500);
+    border-bottom: 1px solid var(--color-gray-500);
+    margin-bottom: 10px;
+}
+
+.category-link {
+    position: absolute;
+    top: 50px;
+}
+
+.detail-category1,
+.detail-category2 {
+    display: flex;
+    margin-left: 10px;
+    width: 124px;
+}
+
+/* 해시태그영역 */
+.hashtag-Hotkeyword1,
+.hashtag-Hotkeyword2 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.hashtag-category1,
+.hashtag-category2 {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    padding: 22px 10px;
+    /* border: 1px solid var(--color-gray-500); */
+}
+
+.hashtag-product {
+    border: 1px solid var(--color-gray-500);
+    padding: 3px 3px;
+}
+
+.hashtag-link {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: var(--color-yellow-600);
+}
+
+/* 매인배너 영역 */
+
+.carousel-banner {
+    display: flex;
+    /* position: absolute; */
+    margin-left: 10px;
+}
+
+.slides1 {
+    position: relative;
+}
+
+.slide-explantion {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 70px;
+    top: 490px;
+    left: 30px;
+    text-align: center;
+
+    background-color: var(--color-brown-800);
+    border: 1px solid var(--color-brown-800);
+    color: var(--color-white);
+}
+
+.indicatiors {
+    position: absolute;
+    top: 570px;
+    left: 140px;
+}
+
+.indicatiors-main {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    border: none;
+    background-color: var(--color-gray-800);
+}
+
+.indicatiors-sub {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    border: none;
+    background-color: var(--color-gray-600);
+}
+
+/* 상품카드 영역 */
+.product {
+    position: relative;
+    width: 550px;
+
+}
+
+.divline {
+    position: relative;
+    background-color: var(--color-white);
+    border: 0px;
+}
+
+.divline::before {
+    content: "";
+    /* 가상 요소에는 content 속성이 반드시 필요합니다. */
+    position: absolute;
+    top: 320px;
+    /* 상단에 위치 */
+    left: 5px;
+    width: 100%;
+    /* 상품 카드의 전체 너비 */
+    height: 2px;
+    /* 구분선의 높이 */
+    background-color: var(--color-gray-500);
+    /* 구분선의 색상 */
+    transform: translateY(-100%);
+    /* 상품 카드의 바깥으로 구분선을 이동 */
+}
+
+.product1,
+.product2 {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.product2 {
+    top: 350px;
+}
+
+.product-card {
+    width: 170px;
+    margin: 5px;
+    /* border: 1px solid var(--color-gray-500); */
+}
+
+.product-card p {
+    color: var(--color-red-500);
+}
+
+.product-price {
+    font-weight: bold;
+    display: inline-block;
+}

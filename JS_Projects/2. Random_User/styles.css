@@ -1,0 +1,140 @@
+:root {
+    /* css 변수 생성 */
+    
+    --primary-color: #49a6e9;
+    /* 주요 색상 */
+    --second-color: #7149e9;
+    /* 두번째 주요 색상 */
+    --grey-color-1: hsl(209, 61%, 16%);
+    /* hsl : 색(hue), 채도(saturation), 명도(lightness) 로 색 지정*/
+    --grey-color-2: hsl(212, 33%, 89%);
+    --grey-color-3: hsl(210, 36%, 96%);
+    --white-color: #fff;
+    --black-color: #222;
+    --ff-primary: sans-serif;
+    /* font 지정 */
+    --transition: all 0.3s linear;
+    /* 움직이는 대상에 대해서 (전체 시간 방법(linear : 처음부터 끝까지 동일하게) */
+    --spacing: 0.25rem;
+    --radius: 0.5rem;
+    --max-width: 1170px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 생성하는 box는 margin포함 전체 사이즈를 지정하겠다 */
+}
+
+body {
+    font-family: var(--ff-primary);
+    background-color: var(--grey-color-3);
+    font-size: 0.875rem;
+}
+
+img{
+    width: 100%;
+}
+
+.btn {
+    /* 최하단 Random User가 담긴 버튼 */
+    text-transform: uppercase;
+    background-color: var(--primary-color);
+    columns: var(--second-color);
+    padding: 0.4rem 0.7rem;
+    transition: var(--transition);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--radius);
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+
+.btn:hover {
+    /* 최하단 Random User가 담긴 버튼에 활성화되었을 때 */
+    color: var(--primary-color);
+    background-color: var(--second-color);
+    border-color: var(--second-color);
+}
+
+.block {
+    min-height: 50vh;
+}
+
+.bcg-black {
+    background-color: var(--black-color);
+}
+
+.container {
+    /* 아이콘/이미지/글 등이 담겨있는 박스 */
+    width: 90vw;
+    max-width: 730px;
+    background-color: var(--white-color);
+    margin: 0 auto;
+    margin-top: -200px;
+    border-radius: var(--radius);
+    position: relative;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.container::before {
+    /* class container 요소의 앞부분 */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130px;
+    background-color: var(--grey-color-2);
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+
+.container img {
+    /* container의 이미지 */
+    width: 150px;
+    height: 150px;
+    position: relative;
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid rgba(0,0,0,0.25);
+    margin-bottom: 2rem;
+    background-color: var(--white-color);
+}
+
+.user-title {
+    /* My name is */
+    font-size: 18px;
+}
+
+.user-value {
+    /* John Ahn */
+    color: var(--grey-color-1);
+    font-size: 28px;
+}
+
+.value-list {
+    /* icon들이 담겨있는 Box */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    /* grid로 열정렬 6개의 요소 1fr 크기로 정렬 */
+}
+
+.icon {
+    /* icon에 해당하는 버튼 */
+    background : transparent;
+    border: transparent;
+    font-size: 1.5rem;
+    color: var(--grey-color-2);
+    transform: var(--transition);
+}
+
+.icon:hover {
+    color: var(--primary-color);
+}
+
+.active {
+    color: var(--primary-color);
+}

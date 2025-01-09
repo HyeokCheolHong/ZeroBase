@@ -1,0 +1,438 @@
+/* 헤더, 내비게이션, 메인, 푸터 영역 공통 스타일 */
+.header,
+.navigation,
+.main,
+.footer {
+  width: 100%;
+  /* 전체 너비 */
+  max-width: 1200px;
+  /* 최대 너비 설정 */
+  margin: 0 auto;
+  /* 가로 방향으로 중앙 정렬 */
+  padding: 20px;
+  /* 패딩으로 내부 여백 추가 */
+}
+
+/* ul 기본스타일 없앰 */
+ul {
+  list-style-type: none;
+}
+
+/* ---------------------------------------------- */
+/* 헤더                                            */
+/* ---------------------------------------------- */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 200px;
+}
+
+.header__inner {
+  position: relative;
+}
+
+.button--category {
+  position: absolute;
+  padding: 30px 40px;
+  border: none;
+  background-color: var(--color-blue-500);
+
+}
+
+/* 키보드로 접근했을 때의 스타일 */
+.button--category:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  /* 포커스 시 박스 쉐도우 적용 */
+  border-radius: 5px;
+  /* 버튼 모서리 둥글기 유지 */
+}
+
+.button-name {
+  position: absolute;
+  width: 100px;
+  left: 5px;
+  top: 65px;
+  font-size: 14px;
+  color: var(--color-white);
+}
+
+/* ---------------------------------------------- */
+/* 내비게이션                                        */
+/* ---------------------------------------------- */
+@font-face {
+  font-family: 'icomoon';
+  src: url('../../assets/iconfont/fonts/icomoon.eot?ashkrq');
+  src: url('../../assets/iconfont/fonts/icomoon.eot?ashkrq#iefix') format('embedded-opentype'),
+    url('../../assets/iconfont/fonts/icomoon.ttf?ashkrq') format('truetype'),
+    url('../../assets/iconfont/fonts/icomoon.woff?ashkrq') format('woff'),
+    url('../../assets/iconfont/fonts/icomoon.svg?ashkrq#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  /* speak: never; */
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* .icon-appliances:before {
+  content: "\e900";
+}
+
+.icon-baby:before {
+  content: "\e901";
+}
+
+.icon-beauty:before {
+  content: "\e902";
+} */
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 6px var(--color-opacity-40);
+  /* 그림자 테두리 디자인 */
+  background-color: var(--color-opacity-20);
+  /* 배경색 */
+  width: 80%;
+}
+
+.navigation-manu {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.navigation__inner {
+  width: 80%;
+  position: relative;
+  /* background-color: var(--color-white); */
+}
+
+.navigation__list {
+  list-style: none;
+  /* 기본 리스트 스타일 제거 */
+  width: 190px;
+  height: 615px;
+  padding: 0;
+  /* 기본 패딩 제거 */
+  margin: 0;
+  /* 기본 마진 제거 */
+  background-color: var(--color-white);
+  position: relative;
+}
+
+.nav-item {
+  position: relative;
+  /* 하위 메뉴 위치 설정을 위해 relative 설정 */
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  width: 150px;
+
+}
+
+.nav-item-hov:after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-image: url('../../assets/icon/more-right-active.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+.nav-item-group {
+  display: flex;
+  align-items: center;
+
+}
+
+.nav-link {
+  display: block;
+  /* 링크를 블록 요소로 설정 */
+  padding: 10px 5px;
+  /* 패딩 설정 */
+  text-decoration: none;
+  /* 링크 밑줄 제거 */
+  padding-right: 20px;
+  width: 150px;
+}
+
+.nav-item-group:focus,
+.nav-item-group:hover,
+.nav-item-group.is--active>a {
+  color: var(--color-blue-1000);
+  /* Active 및 포커스/호버 상태의 텍스트 색상 */
+}
+
+/* 2depth 메뉴 스타일 */
+.navigation__list_2depth {
+  position: absolute;
+  /* 부모 요소(nav-item) 기준으로 절대 위치 */
+  left: 150px;
+  top: 0px;
+  background-color: var(--color-white);
+  height: 615px;
+}
+
+
+
+.nav-item-2depth-hov::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-image: url('../../assets/icon/more-right-active.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+.nav-item.is--active ul,
+.nav-item ul:focus-within {
+  display: block;
+  /* Active 상태 또는 포커스가 내부에 있을 때 보이게 설정 */
+}
+
+.nav-item>.nav-item ul a:focus,
+.nav-item ul a:hover,
+.nav-item ul.is--active>a {
+  color: var(--color-blue-1000);
+  /* 텍스트 색상 */
+}
+
+/* 3depth 메뉴 스타일 */
+.navigation__list_3depth {
+  position: absolute;
+  /* 부모 요소(nav-item) 기준으로 절대 위치 */
+  left: 190px;
+  top: 0px;
+  height: 615px;
+  background-color: var(--color-white);
+}
+
+.nav-item-2depth.is--active ul,
+.nav-item-2depth ul:focus-within {
+  display: block;
+  /* Active 상태 또는 포커스가 내부에 있을 때 보이게 설정 */
+}
+
+.nav-item ul a:focus,
+.nav-item ul a:hover,
+.nav-item ul.is--active>a {
+  color: var(--color-blue-1000);
+  /* 텍스트 색상 */
+}
+
+/* 1depth, 2depth 구분 가상선 */
+.navigation__list::before {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 0;
+  height: 100%;
+  border-left: 1px solid #000;
+  z-index: 1;
+}
+
+.navigation__list_2depth::before {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 0;
+  height: 100%;
+  border-left: 1px solid #000;
+  z-index: 1;
+}
+
+
+
+/* ---------------------------------------------- */
+/* 메인 콘텐츠                                       */
+/* ---------------------------------------------- */
+/* 메인 콘텐츠 영역의 최소 높이 설정 */
+.main {
+  min-height: 52rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+
+/* ---------------------------------------------- */
+/* 푸터                                            */
+/* ---------------------------------------------- */
+.footer {
+  position: relative;
+}
+
+.footer [class*="group"] {
+  width: 25%;
+}
+
+/* 푸터 정보 영역 */
+.footer-imformation {
+  display: flex;
+  margin-top: 10px;
+  /* width: 100%; */
+  height: 90px;
+}
+
+.footer-logo-group {
+  width: 20%;
+  height: 200px;
+}
+
+.company-imformation-group {
+  width: 280px;
+  height: 200px;
+}
+
+.CS-imformation-group {
+  width: 260px;
+  height: 200px;
+}
+
+.company-bank-group {
+  width: 260px;
+}
+
+.footer-logo {
+  display: inline-block;
+  width: 120px;
+  /* 원하는 너비로 설정 */
+  height: 40px;
+  /* 원하는 높이로 설정 */
+  background: url('../../assets/logo/logo-mono.svg') no-repeat center;
+  background-size: contain;
+  text-indent: -9999px;
+  /* 텍스트를 화면에서 보이지 않게 함 */
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+}
+
+.company-imformation,
+.company-bank {
+  font-size: 12px;
+}
+
+.CS-imformation {
+  border-right: 1px solid var(--color-black);
+  font-size: 12px;
+  padding-right: 5px;
+}
+
+.CS-bank {
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+.call-number {
+  font-size: 24px;
+}
+
+.company-adress,
+.company-email {
+  font-size: 11px;
+}
+
+.company-email a {
+  color: var(--color-blue-500);
+  /* 링크 색상 */
+  text-decoration: none;
+  /* 밑줄 제거 */
+}
+
+.company-email a:hover {
+  text-decoration: underline;
+  /* 마우스 오버 시 밑줄 추가 */
+}
+
+.company-bank-content {
+  font-size: 11px;
+  width: 180px;
+}
+
+/* 푸터 카피라이터 영역 */
+.footer-copyright {
+  font-size: 11px;
+  width: 100%;
+  display: flex;
+  background-color: var(--color-black);
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.copyright {
+  width: 80%;
+  color: var(--color-white);
+}
+
+.SNS-zone {
+  display: flex;
+  justify-content: center;
+  /* 아이콘들을 중앙 정렬 */
+  gap: 10px;
+  /* 아이콘들 사이의 간격 */
+  width: 10%;
+  height: 30px;
+  position: absolute;
+  top: 200px;
+  right: 100px;
+}
+
+.SNS-zone a {
+  display: inline-block;
+  /* 링크를 인라인 블록으로 설정 */
+  text-decoration: none;
+  /* 밑줄 제거 */
+}
+
+.SNS-zone img {
+  width: 30px;
+  /* 이미지의 너비 */
+  height: auto;
+  /* 이미지의 높이를 자동으로 조절 */
+  transition: transform 0.3s ease;
+  /* 호버 시 애니메이션 효과 */
+}
+
+.SNS-zone a:hover img {
+  transform: scale(1.1);
+  /* 마우스 오버 시 이미지 확대 */
+}
+
+.instagram-icon img {
+  background: linear-gradient(45deg, var(--color-orange-500) 0%, var(--color-orange-600) 25%, var(--color-red-500) 50%, var(--color-violet-500) 75%, var(--color-violet-600) 100%);
+  border-radius: 50%;
+  /* 원형 아이콘을 만듭니다 */
+  padding: 5px;
+  /* 아이콘과 배경 사이의 여백을 줍니다 */
+  box-sizing: border-box;
+  /* 패딩을 포함한 크기를 설정합니다 */
+}

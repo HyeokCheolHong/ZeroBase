@@ -1,0 +1,22 @@
+/*
+Pseudo-Class Selector
+(가상 클래스 선택자)
+
+ enabled, disabled, checked 
+*/
+
+input[type=text]:enabled {
+    background-color: skyblue;
+}
+
+input[type=text]:disabled {
+    background-color: silver;
+}
+
+input[type=radio]:checked {
+    outline: 3px solid red;
+}
+
+input[type=checkbox]:checked {
+    outline: 3px solid blue;
+}

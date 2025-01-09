@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style4_4.css" />
+    <!-- <link rel="stylesheet" href="../css/style4_4.scss" /> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="targetbox">
+        <div id="blind"></div>
+        <!-- h1의 글자를 가리는 박스 -->
+        <h1>안녕하세요! 판다코딩입니다.</h1>
+    </div>
+
+    <script>
+        // 사용자의 마우스 움직임에따라 박스가 오른쪽으로 밀리는 방식
+        var targetBox = document.querySelector("#targetbox");
+        var Blind = document.querySelector("#blind");
+
+        targetBox.addEventListener("mousemove", function(e){
+            // targetBox의 mousemove에따라 function 동작
+            Blind.style.transform = "translateX(" + e.clientX + "px)";
+            // Blind style X에 변수 e의 만큼을 더해라
+            console.log("translateX(" + e.clientX + "px)");
+
+            // JS에서 style을 줄수있는 두가지 방법
+            // console.log(targetBox.offsetWidth , targetBox.clientWidth);
+            // targetBox.offsetWidth : Border와, Padding을 포함한 HTML 요소의 Width값
+            // targetBox.clientWidth : 순수HTML 요소의 Width값
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+body {
+    margin: 0px;
+}
+
+.bg {
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid red;
+    background-color: black;
+
+    position: fixed;
+    /* browser기준 */
+    top: 0;
+    left: 0;
+
+    opacity: 0.5;
+    /* 투명도 */
+
+}
+
+.modal {
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid lightblue;
+    border-radius: 14px;
+
+    position: fixed;
+    z-index: 1;
+    /* Z축을 위로 올림(layer층생각하면 편함) */
+    padding: 20px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-area:
+        "text" "text"
+        "cancel" "delete";
+
+
+}
+
+.modal p {
+    grid-area: text;
+    font-weight: bold;
+}
+
+.modal .button_C {
+    grid-area: cancel;
+}
+
+.modal .button_D {
+    grid-area: delete;
+}

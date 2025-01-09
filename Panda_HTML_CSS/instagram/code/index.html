@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <!-- <title>Document</title> -->
+
+    <style>
+        p {
+            margin: 0px;
+            /* 앞으로 모든 p tag의 margin은 0px */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="instagram">
+            <div class="header">
+                <div class="header-left">
+                    <img class="header-img" src="../../../1.png" width="38px" height="38px">
+                    <!-- class이름 지정후 상대경로로 img파일 불러옴 / 가로값 및 세로값 지정 -->
+                    <p>example ID</p>
+                </div>
+                <div class="header-right">
+                    <p class="right-menu">···</p>
+                </div>
+            </div>
+            <div class="img">
+                <!-- <img src="../../2.png" width="100%" height="100%"> -->
+                <!-- 상대경로로 img파일 불러옴 / 가로값 및 세로값 은 부모로부터 상속 -->
+            </div>
+
+            <div class="footer">
+                <div class="top-left">
+                    <span>
+                        <svg id="heart" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-heart" viewBox="0 0 16 16">
+                            <path
+                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            <!-- bootstrap icon 홈페이지에서 heart모양 내용 복사한것 -->
+                        </svg>
+                        <svg id="fill-heart" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+
+                        </svg>
+
+                        <script>
+                            var heart_js, fill_heart_js;
+                            // 변수 heart_js와 fill-heart_js 생성
+                            heart_js = document.getElementById("heart");
+                            // heart_js는 문서에 ID가 heart인것
+                            fill_heart_js = document.getElementById("fill-heart");
+                            // fill_heart_js는 문서에 ID가 fill-heart인것
+                            heart_js.addEventListener("click", function () {
+                                // heart_js가 클릭되었을 때(javascript)
+                                heart_js.style.display = "none";
+                                // heart_js의 해당하는것은 숨김처리
+                                fill_heart_js.style.display = "block";
+                                // fill_heart_js의 해당하는것은 보여짐
+                            })
+                            fill_heart_js.addEventListener("click", function () {
+                                // fill_heart_js가 클릭되었을 때(javascript)
+                                heart_js.style.display = "block";
+                                // heart_js의 해당하는것은 보여짐
+                                fill_heart_js.style.display = "none";
+                                // fill_heart_js에 해당하는것은 숨김
+                            })
+                        </script>
+                    </span>
+                    <span>comment</span>
+                    <span>DM</span>
+                </div>
+                <div class="top-center">
+                    <ul>
+                        <li style="background-color: blue;"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- 순번이없는 리스트-->
+                </div>
+                <div class="top-right">
+                    <span>Shared</span>
+                </div>
+                <div class="middle">
+                    <p><b>100Likes</b></p>
+                </div>
+                <div class="bottom">
+                    <p>
+                        <b>Lorem</b> ipsum, dolor sit amet consectetur adipisicing elit. Voluptas voluptatibus incidunt
+                        aliquam
+                        earum? Quaerat, molestiae. Dicta, nihil, at accusamus illo possimus omnis distinctio cum impedit
+                        laboriosam perferendis numquam ab nisi!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

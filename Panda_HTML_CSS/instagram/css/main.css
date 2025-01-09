@@ -1,0 +1,224 @@
+body {
+    background-color: #c6c6c6;
+    margin: 0px;
+    /* margin을 0px */
+}
+
+.wrap {
+    background-color: white;
+    width: 375px;
+    height: 100vh;
+    /* height값을 부모만큼 */
+    margin: 0 auto;
+    /* wrap의 여백을 상하0 좌우auto */
+
+    display: flex;
+    /* 박스형식으로 표현 */
+    align-items: center;
+    /* wrap의 들어가는건 상하 기준 가운데 정렬 */
+}
+
+.instagram {
+    width: 100%;
+    height: 550px;
+    border: 1px solid black;
+    /* 외각선 1px 실선 검정(참고용) */
+
+    display: grid;
+    /* gird형식으로 표현 */
+    grid-template-columns: 1fr;
+    /* gird각 영역의 좌우를 1비율로 지정 */
+    grid-template-rows: 50px 375px 1fr;
+    /* grid각 영역의 높이를 50px/375px/1비율로 지정 */
+    grid-template-areas:
+        "header"
+        "img"
+        "footer";
+    /* grid구역을 최상단 header
+                    중단 img
+                  최하단 footer 지정 */
+
+    border-top: 1px solid lightgray;
+    /* 위 외각선 1px 실선 밝은회색 */
+    border-bottom: 1px solid lightgray
+        /* 아래 외각선 1px 실선 밝은회색 */
+}
+
+.header {
+    grid-area: header;
+    /* 그리드 이름 : header */
+    width: auto;
+    /* width 높이를 auto지정(부모값 따라감) */
+    height: auto;
+    /* header 높이를 auto지정(부모값 따라감) */
+    margin: 5px 10px;
+    /* header의 여백을 상하5px 좌우10px지정 */
+    font-weight: bold;
+    /* 글씨 폰트 굵게 */
+}
+
+.header-left {
+    float: left;
+    /* 표시되는건 왼쪽부터 */
+    display: flex;
+    /* 박스형식으로 표현 */
+    align-items: center;
+    /* header-left의 들어가는건 상하 기준 가운데 정렬 */
+}
+
+.header-img {
+    border: 1px solid black;
+    /* 외각선 1px 실선 검정 */
+    border-radius: 50%;
+    /* 사각형 꼭짓점 기준 50% 원형 */
+    margin-right: 10px;
+    /* header-img 기준 오른쪽 여백 10px */
+}
+
+.header-right {
+    float: right;
+    /* 표시되는건 오른쪽부터 */
+    height: 100%;
+    display: flex;
+    /* 박스형식으로 표현 */
+    align-items: center;
+    /* header-right의 들어가는건 상하 기준 가운데정렬 */
+}
+
+.right-menu {
+    cursor: pointer;
+    /* 사용자의 마우스가 오면 마우스포인터가 변함 */
+
+    user-select: none;
+    /* 드래그 불가 */
+}
+
+.img {
+    clear: both;
+    grid-area: img;
+    /* 그리드 이름 : img */
+    width: 100%;
+    height: 100%;
+
+    background-image: url(../../2.png);
+    /* 배경을 이미지로 지정후 상대경로로 이미지 불러옴 */
+    background-size: cover;
+    /* gird를 img의 원본크기만큼 채움(이미지손실 가능) */
+    background-size: no-repeat;
+    /* 이미지를 채우고도 빈여백이 있다면 반복하지말아라 */
+}
+
+.footer {
+    grid-area: footer;
+    /* 그리드 이름 : footer  */
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    /* gird형식으로 표현 */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* gird각 영역의 좌우를 1비율씩 지정 */
+    grid-template-rows: 50px auto auto;
+    /* grid각 영역의 높이를 50px/auto/auto 지정 */
+    grid-template-areas:
+        "top-left top-center top-right"
+        "middle middle middle"
+        "bottom bottom bottom";
+    /* grid구역을 최상단 header
+                    중단 img
+                  최하단 footer 지정 */
+
+}
+
+.top-left {
+    grid-area: top-left;
+    display: flex;
+    /* 박스형식 배치 */
+    font-size: 10px;
+    align-items: center;
+    /* item들을 상하기준 가운데 정렬 */
+    justify-content: space-evenly;
+    /* 좌우정렬을 지정 */
+
+}
+
+.top-left span {
+    /* top-left span의 요소들에 사용자 마우스가 이동시 */
+    cursor: pointer;
+}
+
+#fill-heart {
+    display: none;
+    /* 기본적으로 사용자에게 보여지지 않음 */
+    fill: red;
+    /* 채움색상 red */
+}
+
+.top-left span:nth-of-type(1):hover {
+    /* top-left span의 첫번째 타입 위치에 사용자 마우스가 이동했을때 */
+    color: red;
+    /* red색상으로 변경 */
+
+}
+
+.top-center {
+    grid-area: top-center;
+    display: flex;
+    /* 박스형식 배치 */
+    font-size: 10px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    /* item들을 상하기준 가운데 정렬 */
+    justify-content: center;
+    /* 좌우정렬을 지정 */
+
+}
+
+.top-right {
+    grid-area: top-right;
+    display: flex;
+    /* 박스형식 배치 */
+    font-size: 10px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    /* item들을 상하기준 가운데 정렬 */
+    justify-content: center;
+    /* 좌우정렬을 지정 */
+}
+
+.middle {
+    grid-area: middle;
+    font-size: 12px;
+    display: flex;
+    /* 박스형식 배치 */
+    align-items: center;
+    /* item들을 상하기준 가운데 정렬 */
+    margin: 0 10px;
+}
+
+.bottom {
+    grid-area: bottom;
+    font-size: 10px;
+    margin: 0 10px;
+}
+
+ul {
+    padding: 0px;
+    /* padding영역 없앰 */
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    /* 박스형태표시 및 좌우정렬지정 및 list구분표시 없앰 */
+    width: 50%;
+    /* 점 크기 지정 */
+}
+
+li {
+    width: 7px;
+    height: 7px;
+    background-color: lightgray;
+    border-radius: 50%;
+    /* li tage 전부 해당 */
+}

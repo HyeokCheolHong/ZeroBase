@@ -1,0 +1,116 @@
+/* 1. 태그이름 */
+/* p {
+            color: red;
+        } */
+
+/* 2. class */
+/* .test {
+            color: blue;
+        } */
+
+/* 3. id */
+/* #test_1 {
+            color: green;
+        } */
+
+/* 4. *(모든것) */
+/* * {
+            color: gray;
+        } */
+
+/* 5. 선택자 + " " + 선택자 */
+/* div p {
+            color: hotpink;
+        } */
+
+/* .test_2 .test {
+            color: red;
+        } */
+
+/* 6. 선택자 + "+" + 선택자 [인접선택자 : test_2 class 바로 다음 tag에 test class 항목만 선택]*/
+/* .test_2+.test {
+            color: red;
+        } */
+
+/* 7. 선택자 + ">" + 선택자 [앞선택자의 직계자손만]*/
+/* .test_2>.test {
+            color: red;
+        } */
+
+/* 8. 선택자 + "~" + 선택자 [test_2 class 다음 tag중 test class 항목 선택] */
+/* .test_2~.test {
+            color: red;
+        } */
+
+/* 9. [] : 속성선택자(a, input) */
+/* a[title=Naver] {
+            color: red;
+        } */
+
+/* 가상클래스 */
+/* 10. : : 가상선택자 */
+/* hover : content위로 사용자의 마우스가 올라가있을때 반응 */
+/* a:hover {
+            color: red;
+        } */
+/* a:hover[title="Naver"] {
+            color: red;
+        } */
+
+/* 11. : : 가상선택자 */
+/* link : 사용자가 방문한적이 없는 cite인 경우 */
+/* a:link {
+            color: blue;
+        } */
+
+/* visited : 사용자가 방문한적이 있는 cite인 경우 */
+/* a:visited {
+            color: red;
+        } */
+
+/* 12. not : 선택자:not(선택자) */
+/* p:not(.panda) {
+            color: red;
+        } */
+
+/* 13. nth-child [선택자의 자손중 몇번째] / nth-last-child [선택자의 자손중 마지막부터 몇번째]*/
+/* .panda p:nth-child(3) {
+            color: red;
+        } */
+
+/* 14. nth-of-type [선택자 중 몇번째] / nth-last-of-type [선택자 중 마지막부터 몇번째]*/
+/* .panda .coding:nth-of-type(3) {
+            color: red;
+        } */
+
+/* 가상요소 */
+/* 15. :: : 가상요소 */
+/* 첫번째 줄만 */
+/* .coding::first-line {
+    color: red;
+} */
+/* 첫번째 문자만 */
+/* .coding::first-letter {
+    color: red;
+} */
+
+/* 16. after : content 뒤에 가상요소 추가 */
+/* .coding::after {
+    content: ";";
+} */
+
+/* 17. before : content 앞에 가상요소 추가 */
+/* .coding::before {
+    content: "판다코딩";
+} */
+
+/* 18. after와 before은 content만 넣는것은 아님 */
+.coding::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    top: 0;
+    left: 0;
+}

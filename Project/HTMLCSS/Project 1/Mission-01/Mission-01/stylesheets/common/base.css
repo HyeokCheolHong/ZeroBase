@@ -1,0 +1,8 @@
+/* Base 스타일 작성 */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    /* 기본 글자 크기를 16px로 설정 */
+    font-family: 'Arial', sans-serif;
+    /* 기본 웹 폰트를 Arial로 설정, 사용자의 시스템에 Arial이 설치되어 있지 않은 경우 sans-serif 폰트를 대체 사용 */
+}

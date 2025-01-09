@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <section id="formSection">
+            <div class="header">
+                <img src="https://www.novlr.org/_next/image?url=https%3A%2F%2Fwp.novlr.org%2Fwp-content%2Fuploads%2F2021%2F09%2Finstagram-1.jpg&w=1080&q=75"
+                    alt="" style="width: 175px; height: 51px;">
+                <!-- img url 복사 후 붙여넣기 -->
+                <!--  display: flex; justify-content: center; align-items: center; -->
+                <p class="heading" style="color: rgb(142, 142, 142);">친구들의 사진과 동영상을 보려면 가입하세요.</p>
+                <button class="facebook">
+                    <i class="fa-brands fa-square-facebook" style="margin-right: .5em; font-size: 18px;"></i>Facebook으로
+                    로그인</button>
+                <!-- i tag로 앞에 이모티콘(복붙)후 내용작성  -->
+            </div>
+            <div class="divider">
+                <div>
+                    <hr class="hrstyle">
+                </div>
+                <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+                    <p style="font-size: 12px; color: gray; font-weight: bold;">
+                        또는
+                    </p>
+                </div>
+                <div>
+                    <hr class="hrstyle">
+                </div>
+
+            </div>
+            <!-- 유효성 검사는 대부분 JS에서 작성 -->
+            <form action="./result.html" class="form" method="get">
+                <input class="input-style" type="email" placeholder="이메일 주소" required>
+                <!-- required : input내용이 작성되었는지 확인 -->
+                <input class="input-style" type="text" placeholder="성명" required>
+                <input class="input-style" type="text" placeholder="사용자 이름" required>
+                <input class="input-style" type="password" placeholder="비밀번호" required minlength="8">
+                <!-- minlength : input내용에 최소길이 (maxlength도 있음) -->
+                <input class="input-style" type="password" placeholder="비밀번호 확인" required minlength="8">
+                <input class="submit-style" type="submit" value="가입">
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>

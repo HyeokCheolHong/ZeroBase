@@ -1,0 +1,109 @@
+* {
+/* 모든 항목     */
+    box-sizing: border-box;
+    /* box의 크기 기준은 border의 크기로 기준한다 */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    /* html과 body의 margin과 padding영역을 0로 만듬 */
+}
+
+body {
+    background-color: rgb(247, 247, 247);
+    /* 기본 body영역 배경색 변경 */
+}
+
+.container {
+    background-color: rgb(73, 153, 99);
+    /* class:container의 배경색 변경 */
+    max-width: 768px;
+    /* container의 최대길이는 768px */
+    min-height: 100vh;
+    /* container의 최대 높이는 100vh (vh : 뷰포트의 %)*/
+    margin: 0 auto;
+    /* 마진을 위아래 : 0 / 좌우 : auto */
+    display: flex;
+    /* container 내부 요소 표기방식을 flex로 열을 기준으로 정렬*/
+}
+
+nav {
+    background-color: tomato;
+    /* nav tag의 배경색은 tomato색상 */
+    color: white;
+    /* nav tag의 글자색은 white 색상 */
+    flex-basis: 128px;
+    /* navgation bar는 뷰포트를 조절해도 width가 변하지 않으니 지정함
+       부모인 flex를 이용해 자식요소를 128px로 고정 */
+}
+
+.box-container {
+    background-color: aquamarine;
+    /* box-container 배경색은 aquamarine색상 */
+    flex-grow: 1;
+    /* 남은 가로 여백을 1인자로 채운다 */
+    display: flex;
+    /* box-container 내부 요소 표기방식을 flex로 열을 기준으로 정렬*/
+    flex-wrap: wrap;
+    /* container의 최대 폭보다 item의 폭이 크면 다음행으로 이동 */
+    /* 내부요소들이 200px유지되면서 container인 768px을 넘어가면 다음행으로 이동 */
+
+}
+
+.box {
+    background-color: wheat;
+    /* class:box의 배경색은 wheat색상 */
+    border: 3px solid rgb(282, 97, 282);
+    /* class:box의 border를 실선 3px rgb색상 변경 */
+    min-height: 150px;
+    /* box 높이의 최소치는 150px */
+    flex-grow: 1;
+    /* box의 폭이 행을 꽉채우도록 지정(box7번이 생성될경우 행을 꽉채우게) */
+    flex-basis: 50%;
+    /* item 요소인 class box의 기본폭은 50%로 지정 */
+    
+}
+
+footer {
+    background-color: rgb(62, 167, 62);
+    /* footer의 rgb색상으로 배경색 변경 */
+    border: 3px solid green;
+    /* footer의 border를 실선 3px rgb색상 변경 */
+    min-height: 50px;
+    /* footer 높이의 최소치는 50px */
+    flex-grow: 1;
+    /* footer의 폭이 행을 꽉채우도록 지정 */
+    flex-basis: 100%;
+    /* footer의 폭은 100% (box7번이 생성될경우 밀림을 방지) */
+}
+
+.box:nth-child(2n) {
+/* class:box의 2의배수 요소들 */
+    border-color: blue;
+    /* border선을 blue색상 */
+}
+
+@media screen and (max-width: 768px) {
+/* 반응형 디자인 설정 뷰포트가 768보다 작을때 */
+    body {
+        .container {
+        /* container class 의 */
+            flex-direction: column;
+            /* flex 방향을 열 로 한다 */
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+/* 반응형 디자인 설정 뷰포트가 480px보다 작을때 */
+    body {
+        .box {
+        /* box class의 */
+            /* flex-basis: 100%;
+            box의 폭을 100%로 지정 */
+            flex-direction: column;
+            /* flex 방향을 열로 지정 */
+        }
+    }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style1.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <div class="box-overloay">
+            <p>판다코딩</p>
+            <p>010-6765-xxxx</p>
+        </div>
+    </div>
+
+    <div id="box2" style="width: 100px; height: 100px; background-color: red;"></div>
+    <div id="box10">
+
+    </div>
+    <div id="box20">
+
+    </div>
+    <script>
+        // 1. js는 태초부터 웹 UI를 제어하기 위한 언어였다.
+        // 2. js로 제어하고 싶은 html 태그를 선택
+        // 3. 어떤 이벤트가 발생했을 때 제어할 것인지 선택
+        // 4. css를 변경
+        // js에서 . : ~의
+        // document.getElementsByClassName : ClassName은 배열을 이해해야함
+
+        var 박스 = document.getElementById("box")
+        // 이 문서에서 ID가 box인것을 변수 "박스"에 저장
+        // = : 대입연산자 [우항에 있는것 좌항에 저장]
+        박스.addEventListener("click", function () {
+            console.log(박스);
+        });
+        // 변수 박스에 이벤트 "click" 이되었을때 (function은 없음) console.log를 남김
+
+        var 박스2 = document.getElementById("box2")
+        박스.addEventListener("mouseover", function () {
+            박스2.style.width = "200px";
+            // 박스에 마우스가 올라가있을 때 박스2의 스타일 변경
+        })
+
+        박스.addEventListener("mouseout", function () {
+            박스2.style.width = "100px";
+            // 박스에 마우스가 올라가있을 때 박스2의 스타일 변경
+        })
+
+        var 박스10 = document.getElementById("box10")
+        박스10.addEventListener("click", function () {
+            박스10.style.width = "200px";
+            // 박스 10에 style중 width를 200px로 변경
+        })
+
+        var 박스20 = document.getElementById("box20")
+        박스20.addEventListener("mouseover", function () {
+            박스20.style.width = "200px";
+            // 박스 20에 style중 width를 200px로 변경
+        })
+
+        var 박스20 = document.getElementById("box20")
+        박스20.addEventListener("mouseout", function () {
+            박스20.style.width = "100px";
+            // 박스 20에 style중 width를 200px로 변경
+        })
+    </script>
+    <!-- js 사용가능 -->
+
+    <!-- js event
+    https://yoonjong-park.tistory.com/entry/addEventListener-%EC%9D%B4%EB%B2%A4%ED%8A%B8%EB%A6%AC%EC%8A%A4%EB%84%88-%EC%A2%85%EB%A5%98
+    onchange : 어떤 요소가 변할 때
+    onclick : 요소가 선택될 때
+    onmouseover : 요소에 마우스가 올라가있을 때
+    onmouseout : 요소에 마우스가 벗어날 때
+    onkeydown : 요소에 키보드 입력이 될 때
+    onload : HTML에 요소가 그려졌을 때
+    on : ~을 기다린다 -->
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style4_3.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>x : <span id="x"></span>, y : <span id="y"></span></h1>
+    <div id="cursor"></div>
+
+    <script>
+        // css tricks mousemove 검색
+        window.addEventListener("mousemove", 마우스추적);
+        var x = document.querySelector("#x");
+        var y = document.querySelector("#y");
+        var cursor = document.querySelector("#cursor");
+
+        function 마우스추적(evnet) {
+            x.innerHTML = evnet.clientX;
+            y.innerHTML = evnet.clientY;
+            let value = (event.clientX - 25) + "px," + (evnet.clientY - 25) + "px";
+            // 상자를 마우스 포인트 중앙에 위치하기위한 변수
+
+
+            // transform을 활용하여 구현하기
+            cursor.style.transform = "translate(" + value + ")";
+            // javascript에선 text("")로 속성부여 (뒤 변수와는 + 로 연결 )
+        }
+    </script>
+</body>
+
+</html>

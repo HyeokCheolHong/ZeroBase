@@ -1,0 +1,24 @@
+/*
+박스 모델(box model)
+
+여백 margin
+*/
+
+.box1 {
+    width: 200px;
+    height: 200px;
+    background-color: blueviolet;
+
+    padding: 20px;
+    border: 20px solid blue;
+    margin: 20px;
+}
+.box2 {
+    width: 200px;
+    height: 200px;
+    background-color: silver;
+
+    padding: 20px;
+    border: 20px solid red;
+    margin: 20px;
+}

@@ -1,0 +1,34 @@
+/*
+Attribute selector
+ (속성 선택자)
+ */
+
+  /* 1. [attr]  */
+  /*a tag중 target 속성*/
+ /* a[target] {
+    color: hotpink;
+ } */
+
+ /* 2. [attr=value] */
+ /* a[href="https://example.org"]{
+    color: indigo;
+ } */
+
+ /* input[type="submit"] {
+    background-color: green;
+ } */
+
+ /* 3. [attr^=value] */
+a[href^="http://"] {
+    color: red;
+}
+
+ /* 4. [attr$=value] */
+a[href$=".com"] {
+    color: silver;
+}
+
+ /* 5. [attr*=value] */
+ a[href*="example"] {
+    color: sienna;
+ }

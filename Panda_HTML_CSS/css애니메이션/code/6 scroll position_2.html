@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style5_2.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="scroll-outer">
+        <div class="scroll-inner"></div>
+    </div>
+
+    <script>
+        var scrollY = 0;
+        // 기본 scrollY는 0이다
+
+        var target = document.querySelector(".scroll-inner");
+        
+        window.addEventListener("scroll", function(){
+            // console.log(document.documentElement.scrollTop, window.innerHeight, document.documentElement.scrollHeight);
+            // windows의 인터넷창 scroll의 정량화값 확인
+            
+            // document.documentElement.scrollTop : 문서의 위치
+            // window.innerHeight : 랜더링된 화면의 가로길이
+            // document.documentElement.scrollHeight : 문서의 총 가로길이
+            
+            // 현재 위치를 찾기위해 
+            // ("문서의 위치" / "문서의 총 가로길이" - "랜더링된 화면의 가로길이" * 100%)
+            // 를 scroll-inner Height의 적용 할 예정
+            
+            // 문서가 랜더링된 후 사용자가 문서의 가로길이를 변경할수 있으므로 따로 설정
+            var documentHeight = document.documentElement.scrollHeight;
+            // 문서의 총 가로길이 변수 생성
+            var browserHeight = window.innerHeight;
+            // 랜더링된 화면의 가로길이 변수 생성
+            
+            scrollY = document.documentElement.scrollTop;
+            var percent = scrollY / (documentHeight - browserHeight) * 100;
+            console.log(typeof(percent));
+            // 변수의 타입을 확인할수 있음
+
+            target.style.width = Math.round(percent) + "%";
+            // 반올림 해주는 Math.round 사용
+            console.log(percent, Math.round(percent));
+        })
+    </script>
+</body>
+
+</html>

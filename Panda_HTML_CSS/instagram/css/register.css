@@ -1,0 +1,112 @@
+.wrap {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: whitesmoke;
+
+    display: flex;
+    /* 박스형식 표시 */
+    justify-content: center;
+    /* 상하 가운데정렬 */
+    align-items: center;
+    /* 좌우 가운데정렬 */
+}
+
+#formSection {
+    background-color: white;
+    border: 1px solid #c6c6c6;
+    /* 외각선 1px 실선 색상지정 */
+    max-width: 350px;
+    /* width값은 최대 350px 고정 */
+    padding: 20px;
+    /* content 외각여백영역 20px */
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    /* flex방향 ↓ */
+    align-items: center;
+    /* 좌우 가운데 정렬 */
+
+    width: 260px;
+    margin: 0 auto;
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+    /* text정렬 방향 가운데 */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.facebook {
+    background-color: #0095f6;
+    color: white;
+    font-weight: bold;
+    /* 폰트 굵음 */
+    border: 1px solid #0095f6;
+    /* 외각선 삭제 */
+    width: 100%;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 5px 9px;
+}
+
+.divider {
+    width: 260px;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* 따로 grid 영역을 지정하지 않아도 코드순서대로 하나씩 적용 */
+    grid-template-rows: 1fr;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.hrstyle {
+    height: 1px;
+    border: none;
+    background-color: lightgray;
+}
+
+.form {
+    width: 260px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.input-style {
+    padding: 9px 0px 7px 8px;
+    background-color: rgb(250, 250, 250);
+    color: rgb(38, 38, 38);
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid lightgray;
+}
+
+.input-style::placeholder {
+    /* input-style class의 placeholder에서만 동작 */
+    font-size: 12px;
+}
+
+.input:active,
+input:focus {
+    /* input tag가 선택되거나 사용자 마우스가 해당되고 있을때 동작 */
+    outline: none;
+    border: 1px solid gray;
+}
+
+.submit-style {
+    background-color: cornflowerblue;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 9px 0px 7px 0px;
+}

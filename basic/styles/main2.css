@@ -1,0 +1,21 @@
+/*
+Pseudo-Class Selector
+(가상 클래스 선택자)
+
+first-chile VS first-of-type
+*/
+
+/* 1. :first-of-type */
+.movie:first-of-type {
+    color: red;
+}
+
+/* 2. :last-of-type */
+p:last-of-type {
+    color: blue;
+}
+
+/* 3. :nth-of-type() */
+p:nth-of-type(2) {
+    color: orange;
+}

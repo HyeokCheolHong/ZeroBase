@@ -1,0 +1,500 @@
+/* main.html의 요소마다의 css */
+
+.wrap {
+    background-color: white;
+    width: 80%;
+    max-width: 1920px;
+    /* 해상도가 큰 모니터를 위한경우 */
+    /* view point의 80%를 차지하지만 1920px을 넘을경우 1920px로 보여준다 */
+    margin: 0 auto;
+    /* tag들을 중앙에 배치할 수 있도록 */
+    /* border: 1px solid black; */
+}
+
+@media screen and (max-width: 767px) {
+    .warp {
+        width: 90%;
+    }
+
+}
+
+.black-bg {
+    background-color: black;
+    width: 100%;
+    height: 1000px;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+/* header */
+
+header {
+    text-align: center;
+    /* 좌우 가운데 정렬 */
+    padding-top: 20px;
+    position: relative;
+    /* .black-bg 위치 조정을 위한 부모 header의 position지정 */
+    color: white;
+    z-index: 10;
+}
+
+header .gnb {
+    /* header tag 자식 class gnb */
+    display: grid;
+    width: 100%;
+    grid-template-columns: 300px 1fr 300px;
+    /* width 관련 */
+    grid-template-rows: auto auto;
+    /* height 관련 */
+    grid-template-areas:
+        "logo gnb-menu menu"
+        "search search search";
+    /* grid 각 구역에 tag들 배치 */
+}
+
+header .gnb .logo {
+    /* header 자식 class gnb 자식 logo */
+    grid-area: logo;
+    cursor: pointer;
+    /* 기존 홈페이지는 a tag사용으로 마우스포인터 모양으로 바뀌는데 현재는 div이므로 따로 작성 */
+    display: flex;
+    align-items: center;
+    /* height center align */
+}
+
+header .gnb .gnb-menu {
+    /* header 자식 class gnb 자식 gnb-menu */
+    grid-area: gnb-menu;
+    display: flex;
+    align-items: center;
+    /* height center align */
+}
+
+header .gnb .gnb-menu ul {
+    /* header 자식 class gnb 자식 gnb-menu 자식 ul*/
+    width: 70%;
+    /* 부모인 header .gnb 100%중 70%차지 */
+    display: flex;
+    justify-content: space-evenly;
+    /* 좌우 정렬 중 하나 */
+    margin: 0 auto;
+    /* grid 구역중 가운데로 정렬 */
+}
+
+header .gnb .gnb-menu ul li {
+    /* header 자식 class gnb 자식 gnb-menu 자식 ul 자식 li*/
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    /* relative : 자기자신이 기준 (.active의 위치 결정을 위한 적용) */
+    padding-bottom: 10px;
+}
+
+
+header .gnb .gnb-menu ul li:hover {
+    /* header 자식 class gnb 자식 gnb-menu 자식 ul 자식 li 의 마우스포인터가 올려져있을때*/
+    color: gray;
+}
+
+header .gnb .gnb-menu ul li:hover::before {
+    /* header 자식 class gnb 자식 gnb-menu 자식 ul 자식 li 의 마우스포인터가 올려져있을때 이전*/
+    content: "";
+    /* before의 필수요소지만 문자를 넣을것이 아니기에 공백 */
+    height: 2px;
+    width: 5px;
+    background-color: white;
+    position: absolute;
+    /* 포지션은 부모기준 */
+    bottom: 0px;
+
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* li tag의 가운데 위치하도록 */
+}
+
+
+header .gnb .gnb-menu ul .active:hover {
+    /* header 자식 class gnb 자식 gnb-menu 자식 ul 자식 li 의 마우스포인터가 올려져있을때*/
+    color: white;
+}
+
+header .gnb .gnb-menu ul .active:hover::before {
+    /* header 자식 class gnb 자식 gnb-menu 자식 ul 자식 li 의 마우스포인터가 올려져있을때 이전*/
+    width: 15px;
+}
+
+header .gnb .gnb-menu ul .active::before {
+    /* header 자식 class gnb 자식 gnb-menu 자식 ul 중 active의 앞*/
+    content: "";
+    /* before의 필수요소지만 문자를 넣을것이 아니기에 공백 */
+    height: 2px;
+    width: 15px;
+    background-color: white;
+    position: absolute;
+    /* 포지션은 부모기준 */
+    bottom: 0px;
+
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* li tag의 가운데 위치하도록 */
+}
+
+header .gnb .menu {
+    /* header 자식 class gnb 자식 menu */
+    grid-area: menu;
+    display: flex;
+    align-items: center;
+    /* height center align */
+    justify-content: space-between;
+    /* 좌우 정렬 중 오른쪽 정렬 */
+    font-weight: bold;
+    width: 80%;
+    margin-left: 20%;
+}
+
+header .gnb .menu .menu-hover {
+    padding: 10px 10px;
+    border-radius: 30px;
+}
+
+header .gnb .menu .menu-hover:hover {
+    /* class menu-hover에 사용자 마우스가 올라가있을떄 */
+    background-color: rgba(172, 172, 172, 0.3);
+    /* 회색에 불투명도 0.3 */
+}
+
+header .gnb .menu .profile {
+    background-color: white;
+    color: gray;
+    padding: 10px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+header .gnb .search {
+    /* header 자식 class gnb 자식 search */
+    grid-area: search;
+    width: 80%;
+    margin: 0 auto;
+    /* 가운데 정렬 */
+}
+
+header .gnb .search .searchul {
+    /* header 자식 class gnb 자식 class search 자식 class searchul*/
+    background-color: white;
+    color: black;
+    display: flex;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+header .gnb .search .searchul li {
+    /* header 자식 class gnb 자식 class search 자식 class searchul 자식 li*/
+    width: 25%;
+    text-align: left;
+    /* 왼쪽정렬 */
+    padding: 20px 50px 20px 20px;
+    /* top 20px / right 50px / bottom 20px / left 20px */
+    /* content를 제외한 박스 크기 지정 */
+    font-weight: bold;
+    position: relative;
+}
+
+header .gnb .search .searchul li::after {
+    /* li tag의 기본 표시 옵션 : after*/
+    position: absolute;
+    content: "";
+    /* after 필수요소 */
+    width: 1px;
+    height: calc(100% - calc(20px * 2));
+    /* search의 100% - padding top, bottom의 크기 */
+    background-color: lightgray;
+    right: 0;
+    top: 50%;
+    /* 해당 선의 기준점이 search의 크기의 50% 에서 시작 */
+    transform: translate(0, -50%);
+    /* 선의 기준점을 세로기준 -50%(아래방향) 가운대로 정렬 */
+}
+
+header .gnb .search .searchul li:last-of-type::after {
+    /* after의 선 마지막은 필요없으므로 */
+    display: none;
+    /* 표시  X */
+}
+
+header .gnb .search .searchul li:hover {
+    /* header 자식 class gnb 자식 class search 자식 class searchul 자식 li*/
+    background-color: lightgray;
+    border-radius: 50px;
+}
+
+header .gnb .search .searchul li span {
+    color: gray;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+
+
+@media screen and (max-width: 765px) {
+    header .gnb {
+
+        grid-template-columns: 1fr 1fr 1fr;
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    header .gnb {
+
+        grid-template-columns: 1fr 1fr 1fr;
+        font-size: 0.7rem;
+    }
+}
+
+/* notice */
+
+.notice {
+    background-color: #ff385c;
+    border-radius: 14px;
+    text-align: center;
+    /* text의 가운데 정렬 */
+    height: 320px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    /* 정렬방향 : 열 */
+    align-items: center;
+    /* notice크기의 자식 tag 행방향 가운데 정렬*/
+    justify-content: center;
+    /* notice크기의 자식 tag의 열방향 가운데 정렬 */
+    z-index: 10;
+}
+
+.notice p {
+    font-size: 1rem;
+    /* html의 기본 사이즈의 1배율 */
+    color: white;
+    font-weight: bold;
+    line-height: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.notice button {
+    border: 1px solid white;
+    padding: 5px 15px;
+    color: white;
+    /* button tag는 부모로부터 color를 물려받지 못하기때문에 따로 명시 */
+    background-color: inherit;
+    /* 내부를 채우지 않음 */
+    font-weight: bold;
+    border-radius: 14px;
+}
+
+/* mainBanner */
+
+.mainBanner {
+    height: 600px;
+    border-radius: 14px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 50px;
+
+    background-image: url("https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEyNjIzMTk3NDU3MjE4Nzg2NA%3D%3D/original/f4cbe542-3ce0-4c6f-a8f1-d2120c1b2420.jpeg?im_w=1440&im_q=highq");
+    /* 배경을 이미지로 */
+    background-size: cover;
+    /* cover : 이미지가 찌그러지지 않는 한도 내에서 제일 크게 설정 (가로 세로비 중 큰 요소) */
+    background-repeat: no-repeat;
+    /* 반복 실행안함 */
+    background-position: center;
+
+    position: relative;
+    z-index: 10;
+}
+
+.mainBanner .content {
+    color: white;
+    text-align: center;
+
+}
+
+.mainBanner .content p {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.mainBanner .content button {
+    border: 1px solid white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 24px;
+}
+
+.mainBanner .content button span {
+    background: linear-gradient(90deg, #6f019c 0%, #C6017E 135.12%);
+    /* gradiation */
+    -webkit-background-clip: -webkit-text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* 그라데이션 색상을 택스트 모양대로 잘라 색상을 입힘 */
+
+}
+
+/* .box {
+    gradient 실습 (css webkit을 적용해야함[브라우져마다 사용법이 다름])
+    width: 100%;
+    height: 100px;
+    border: 1px solid red;
+    background: linear-gradient(90deg, #6f019c 0%, #C6017E 135.12%) !important;
+
+    margin-bottom: 100px;
+    margin-top: 100px;
+} */
+
+
+/* idea */
+.city {
+    display: flex;
+    width: 100%;
+    /* overflow: scroll; */
+    /* view포인트보다 넘쳤을때 scroll바 생성 */
+    overflow: auto;
+
+}
+
+.city .card {
+    width: 25%;
+    min-width: 250px;
+    margin-right: 30px;
+}
+
+.city .card:nth-last-of-type(1) {
+    margin-right: 0px;
+}
+
+.city .card img {
+    width: 100%;
+    height: 150px;
+    display: block;
+    /* img와 p tag사이 빈공간을 없앰 */
+    border-radius: 15px 15px 0px 0px;
+}
+
+.city .card figcaption {
+    border-radius: 0px 0px 15px 15px;
+    height: calc(150px - calc(24px * 2));
+    padding: 24px 16px;
+    color: white;
+}
+
+.city .card figcaption p {
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: bold;
+}
+
+.city .card figcaption span {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+    .city {
+        -ms-overflow-style: none;
+        /* ie */
+        scrollbar-width: none;
+        /* firefox */
+    }
+
+    .city::-webkit-scrollbar {
+        display: none;
+        /* chrom 스크롤바 없애는 법 */
+    }
+
+    .city .card {
+        margin-right: 15px;
+    }
+
+    .city .card figcaption p {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+/* expression */
+.expression {
+    display: grid;
+    grid-template-rows: auto auto;
+    /* 세로는 auto */
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+    grid-template-areas:
+        "heading heading"
+        "div1 div2";
+}
+
+@media screen and (max-width: 576px) {
+
+    /* 사용자 view point가 576보다 작을때 */
+    .expression {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        /* 세로는 auto */
+        grid-template-columns: 1fr;
+        grid-gap: 15px;
+        grid-template-areas:
+            "heading"
+            "div1"
+            "div2";
+    }
+}
+
+.expression .photodiv {
+    height: calc(700px - calc(60px * 2));
+    padding: 60px;
+    border-radius: 14px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    /* 반복X */
+    background-size: cover;
+    /* cover : 이미지가 찌그러지지 않는 한도 내에서 제일 크게 설정 (가로 세로비 중 큰 요소) */
+}
+
+.expression .photodiv:nth-of-type(1) {
+    background-image: url(https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEzMTA4NzY0ODgzNzUzNjQzNw%3D%3D/original/cda19e4c-ae11-47b1-831b-a29f94ab76dc.png?im_w=1440&im_q=highq);
+
+}
+
+.expression .photodiv:nth-of-type(2) {
+    background-image: url(https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEyNjMyMzc5Mzc2MTc3OTEzMg%3D%3D/original/01819c16-43a1-4aee-9957-9edce6eb8e16.png?im_w=1440&im_q=highq);
+}
+
+.expression .photodiv p {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 3rem;
+}
+
+.expression .photodiv button {
+    color: black;
+    font-weight: bold;
+    border: none;
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 14px;
+    margin-top: 1rem;
+}
+
+.expression .photodiv button:hover {
+    background-color: lightgray;
+}

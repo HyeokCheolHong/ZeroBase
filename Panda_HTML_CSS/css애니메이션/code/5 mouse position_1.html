@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style4_1.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>x : <span id="x"></span>, y : <span id="y"></span></h1>
+    <script>
+        // window.addEventListener("mousemove")
+        // windows에서 사용자의 마우스 움직임에 대한 것을 인식
+        window.addEventListener("mousemove", 마우스추적);
+        var x = document.querySelector("#x")
+        // querySelector에서 x를 찾는다
+        var y = document.querySelector("#y")
+        // querySelector에서 y를 찾는다
+
+        function 마우스추적(event) {
+            x.innerHTML = event.clientX;
+            // id : x 의 innerHTML는 요소(element) 내에 포함 된 HTML 또는 XML 마크업을 가져오거나 설정
+            y.innerHTML = event.clientY;
+            // console.log(event);
+            // 개발자도구 콘솔창 로그에 event 로그를 남김
+        }
+        // clientx/clienty (x,y의 좌표)
+    </script>
+</body>
+
+</html>

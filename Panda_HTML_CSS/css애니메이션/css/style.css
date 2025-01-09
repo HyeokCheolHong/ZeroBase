@@ -1,0 +1,111 @@
+body {
+    margin: 20px;
+    display: flex;
+}
+
+div {
+    margin: 10px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+    /* box로부터 흘러넘친 UI가 있다면 보여주지 않는다 */
+}
+
+.box-overloay {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    transition: all 1s;
+}
+
+.box:hover .box-overloay {
+    /* .box의 마우스가 간다면 .box-overloay에 */
+    top: 0px;
+}
+
+.box10 {
+    position: absolute;
+    top: 200px;
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s;
+}
+
+.box10:hover {
+    width: 300px;
+}
+
+
+#div1 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: height 2s;
+    transition-timing-function: linear;
+    /* 일정한속도 */
+}
+
+#div2 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: height 2s;
+    transition-timing-function: ease;
+    /* linear보단 빠른 속도 */
+}
+
+#div3 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: height 2s;
+    transition-timing-function: ease-in;
+    /* 천천히 변하다 빨라짐 */
+}
+
+#div4 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: height 2s;
+    transition-timing-function: ease-out;
+    /* 빠르게 변하다 느려짐 */
+}
+
+#div5 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: height 2s;
+    transition-timing-function: ease-in-out;
+    /* 천천히 - 빠르게 - 천천히 */
+}
+
+#div1:hover {
+    height: 300px;
+}
+
+#div2:hover {
+    height: 300px;
+}
+
+#div3:hover {
+    height: 300px;
+}
+
+#div4:hover {
+    height: 300px;
+}
+
+#div5:hover {
+    height: 300px;
+}

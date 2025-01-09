@@ -1,0 +1,80 @@
+body {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#box {
+    width: 100px;
+    height: 100px;
+    background-image: url(../1.png);
+    background-position: center;
+    background-size: cover;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.box-overloay {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+    background-color: blue;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    /* 투명도 */
+    transition: all .5s ease-in-out;
+}
+
+.box-overloay p {
+    margin: 0px;
+    font-size: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#box:hover .box-overloay {
+    /* .box의 마우스가 간다면 .box-overloay에 */
+    opacity: 1;
+}
+
+#box10 {
+    width: 100px;
+    height: 100px;
+    background-image: url(../1.png);
+    background-position: center;
+    background-size: cover;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+    position: relative;
+    /* overflow: hidden; */
+
+    transition: width 1s ease-in;
+    /* width가 변하는데 1초동안 변함 */
+}
+
+#box20 {
+    width: 100px;
+    height: 100px;
+    background-image: url(../1.png);
+    background-position: center;
+    background-size: cover;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+    position: relative;
+    /* overflow: hidden; */
+
+    transition: width 1s ease-in;
+    /* width가 변하는데 1초동안 변함 */
+}
+
+#box2 {
+    transition: width 1s ease-in;
+}

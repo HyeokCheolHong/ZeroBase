@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>내비게이션 및 푸터 - 쿠팡(Coupang)</title>
+  <link rel="icon" href="./assets/favicon/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./stylesheets/main.css" />
+  <script type="module" src="./js/main.js"></script>
+  <link rel="stylesheet" href="https://i.icomoon.io/public/temp/5dfe7b8bc2/UntitledProject/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <!-- 헤더 영역 -->
+    <!-- 대제목의 경우 "Coupang"으로 미리 마크업되어 있습니다. -->
+    <h1 class="sr-only">Coupang</h1>
+    <div class="header__inner">
+      <!-- 카테고리 버튼은 .header__inner 영역 안에 마크업 해주세요. -->
+      <button class="button--category">
+        <img src="./assets/icon/hamburger.svg" alt="Hamburger Icon">
+        <span class="button-name">카테고리</span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="navigation">
+    <!-- 내비게이션 영역 -->
+    <h2 class="navigation-manu">내비 메뉴</h2> <!-- 스크린리더에서만 보이게 처리 -->
+
+    <div class="navigation__inner">
+      <!-- 카테고리별 내비게이션(메뉴) 영역 -->
+      <ul class="navigation__list">
+        <li class="nav-item nav-item-hov">
+          <!-- <i class="icon-appliances ifont"></i> -->
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe905;</i>
+            <span class="nav-text">패션의류/잡화</span>
+          </a>
+          <ul class="navigation__list_2depth">
+            <li class="nav-item-2depth nav-item-2depth-hov">
+              <a href="#" role="button" class="nav-link">여성패션</a>
+              <ul class="navigation__list_3depth">
+                <li class="nav-item-3depth nav-item-3depth-hov">
+                  <a href="#" class="nav-link">의류</a>
+                </li>
+                <li class="nav-item-3depth nav-item-3depth-hov">
+                  <a href="#" class="nav-link">속옷/잠옷</a>
+                </li>
+                <li class="nav-item-3depth nav-item-3depth-hov">
+                  <a href="#" class="nav-link">신발</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item-2depth">
+              <a href="#" class="nav-link">남성패션</a>
+            </li>
+            <li class="nav-item-2depth">
+              <a href="#" class="nav-link">유아동패션</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe902;</i>
+            <span class="nav-text">뷰티</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe901;</i>
+            <span class="nav-text">출산유아동</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe906;</i>
+            <span class="nav-text">식품</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe909;</i>
+            <span class="nav-text">주방용품</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe907;</i>
+            <span class="nav-text">생활용품</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe908;</i>
+            <span class="nav-text">홈인테리어</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe900;</i>
+            <span class="nav-text">가전디지털</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe90b;</i>
+            <span class="nav-text">스포츠</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe904;</i>
+            <span class="nav-text">자동차용품</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe903;</i>
+            <span class="nav-text">도서음반</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe90e;</i>
+            <span class="nav-text">완구취미</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe90c;</i>
+            <span class="nav-text">문구오피스</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe90a;</i>
+            <span class="nav-text">반려동물</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe90f;</i>
+            <span class="nav-text">여행티켓</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" role="button" class="nav-link nav-item-group">
+            <i class="icon" aria-hidden="true">&#xe90d;</i>
+            <span class="nav-text">테마관</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 내비게이션 제목 -->
+  </nav>
+
+  <main class="main">
+    <!-- 메인 콘텐츠 영역 -->
+    <!-- 해당 영역은 추가적인 마크업없이 비워놓아 주세요. -->
+  </main>
+
+  <footer class="footer">
+    <!-- 푸터 영역 -->
+    <!-- 푸터 관련 콘텐츠는 .footer 영역 안에 마크업 해주세요. -->
+    <nav>
+      <a href="#">인재채용</a>
+      <span class="divider" aria-hidden="true">ㅣ</span>
+      <a href="#">입점 /제휴문의</a>
+      <span class="divider" aria-hidden="true">ㅣ</span>
+      <a href="#">공지사항</a>
+      <span class="divider" aria-hidden="true">ㅣ</span>
+      <a href="#">고객의 소리</a>
+      <span class="divider" aria-hidden="true">ㅣ</span>
+      <a href="#">개인정보 처리방침</a>
+      <span class="divider" aria-hidden="true">ㅣ</span>
+      <a href="#">쿠팡페이 이용약관</a>
+      <span class="divider" aria-hidden="true">ㅣ</span>
+      <a href="#">쿠팡페이 개인정보 처리방침</a>
+      <span class="divider" aria-hidden="true">ㅣ</span>
+      <a href="#">신뢰관리센터</a>
+      <span class="divider" aria-hidden="true">ㅣ</span>
+      <a href="#">제휴마케팅</a>
+      <span class="divider" aria-hidden="true">ㅣ</span>
+      <a href="#">광고안내</a>
+    </nav>
+
+    <div class="footer-imformation">
+      <div class="footer-logo-group">
+        <span class="footer-logo">Coupang</span>
+      </div>
+      <div class="company-imformation-group">
+        <span class="company-imformation">
+          상호명 및 호스팅 서비스 제공 : 쿠팡(주)<br />
+          대표이사 : 강한승, 박대준<br />
+          서울시 송파구 송파대로 570<br />
+          사업자 등록번호 : 120-88-00767<br />
+          통신판매업신고 : 2017-서울송파-0680
+        </span>
+      </div>
+      <div class="CS-imporation-group">
+        <span class="CS-imformation">
+          365고객센터
+        </span>
+        <span class="CS-bank">
+          전자금융거래분쟁처리담당
+        </span>
+        <div class="call-number">
+          1577-7011
+        </div>
+        <div class="company-adress">서울시 송파구 송파대로 570</div>
+        <span class="company-email">
+          email : <a href="mailto:help@coupang.com?subject=문의사항">help@coupang.com</a>
+        </span>
+      </div>
+      <div class="company-bank-group">
+        <div class="company-bank">
+          우리은행 채무지급보증 안내
+        </div>
+        <span class="company-bank-content">
+          당사는 고객님이 현금 결제한 금액에 대해 우리은행과 채무지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.
+        </span>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="copyright">
+        사이버몰 내 판매되는 상품 중에는 쿠팡이 등록한 개별 판매자가 판매하는 마켓플레이스(오픈마켓) 상품이 포함되어 있습니다.<br />
+        마켓플레이스(오픈마켓) 상품의 경우 쿠팡은 통신판매중개자이며 통신판매의 당사자가 아닙니다.<br />
+        쿠팡은 마켓플레이스(오픈마켓) 상품, 거래정보 및 거래 등에 대하여 책임을 지지 않습니다.<br />
+        쿠팡은 소비자 보호와 안전거래를 위해 신뢰관리센터(CM112@coupang.com)를 운영하고 있으며, 관련 분쟁이 발생할 경우 별도의 분쟁 처리절차에 의거 분쟁이 처리됩니다.<br />
+        Copyright © Coupang Corp. 2010-2024 All Rights Reserved
+      </div>
+      <div class="SNS-zone">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+          <img src="./assets/icon/sns-facebook.svg" alt="Facebook">
+        </a>
+        <a href="https://section.blog.naver.com/" target="_blank" rel="noopener noreferrer">
+          <img src="./assets/icon/sns-naver-blog.svg" alt="Naver Blog">
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="instagram-icon">
+          <img src="./assets/icon/sns-instagram.svg" alt="Instagram">
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

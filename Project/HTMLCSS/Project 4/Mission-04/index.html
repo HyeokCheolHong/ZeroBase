@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>헤더 - 쿠팡(Coupang)</title>
+  <link rel="icon" href="./assets/favicon/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./stylesheets/main.css" />
+  <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+  <div class="header">
+    <!-- 로그인 바 -->
+    <div class="header-zone">
+      <ul class="header-list">
+        <li>
+          <a href="/" class="coupangplay">쿠팡플레이</a>
+        </li>
+        <li>
+          <a href="/" class="partnership">제휴마케팅</a>
+        </li>
+        <li>
+          <a href="/" class="login">로그인</a>
+        </li>
+        <li>
+          <a href="/" class="membership">회원가입</a>
+        </li>
+        <li>
+          <a href="/" class="CS">고객센터</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="grid-zone">
+      <!-- logo -->
+      <div class="header-title">
+        <a href="https://www.coupang.com" target="_blank" rel="noopener noreferrer">
+          Coupang
+        </a>
+      </div>
+
+      <!-- 카테고리 영역-->
+      <div class="category-zone">
+        <button class="button--category">
+          <span>카테고리</span>
+        </button>
+      </div>
+
+      <!-- 검색 영역 -->
+      <form action="/search" method="GET" class="search-zone">
+        <!-- <label for="search-category">검색 분류:</label> -->
+        <div class="search-zone-align">
+          <div class="dropdown">
+            <select class="search-category" name="category">
+              <option value="all" disabled selected class="search-all">전체</option>
+              <option value="books">책</option>
+              <option value="electronics">전자제품</option>
+              <!-- 추가 검색 분류 옵션을 넣어주세요 -->
+            </select>
+            <svg class="icon-dropdown" aria-hidden="true" focusable="false" style="width:1em; height:1em">
+              <!-- SVG 코드를 사용하여 DropDown 아이콘 구현 -->
+              <path d="M7 10l5 5 5-5z"></path>
+            </svg>
+            <input type="search" name="q" required aria-required="true" placeholder="찾고 싶은 상품을 검색해 보세요!"
+              aria-label="검색어 입력">
+            <button class="voicesearch-button" type="button" aria-label="음성 검색 버튼">음성 검색</button>
+            <button class="search-button" type="button" aria-label="검색 버튼">검색</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- mycoupang -->
+      <div class="myCoupang">
+        <button class="mycoupang-button">
+          <span class="mycoupang-button-name">마이쿠팡</span>
+        </button>
+        <ul class="coupnag-list">
+          <li class="Order-list">주문목록</li>
+          <li class="cancell-return">취소/반품</li>
+          <li class="steam-list">찜리스트</li>
+        </ul>
+      </div>
+
+      <!-- 장바구니영역 -->
+      <div class="cart">
+        <button class="shopping-button">
+          <span class="shopping-button-name">장바구니</span>
+        </button>
+        <p class="select-product">0</p>
+        <p class="package">장바구니에 담긴 상품이 없습니다.</p>
+      </div>
+
+      <!-- 링크영역 -->
+      <ul class="link-zone">
+        <li class="link-zone-list">
+          <a href="/">
+            <img src="./assets/icon/icon-rocket.svg" alt="로켓배송">로켓배송
+          </a>
+        </li>
+        <li class="link-zone-list">
+          <a href="/">
+            <img src="./assets/icon/icon-fresh.svg" alt="로켓프레시">로켓프레시
+          </a>
+        </li>
+        <li class="link-zone-list">
+          <a href="/">
+            <span>2022년 설날</span>
+            <img src="./assets/icon/new.svg" alt="New">
+          </a>
+        </li>
+        <li class="link-zone-list">
+          <a href="/">로켓직구</a>
+        </li>
+        <li class="link-zone-list">
+          <a href="/">골드박스</a>
+        </li>
+        <li class="link-zone-list">
+          <a href="/">정기배송</a>
+        </li>
+        <li class="link-zone-list">
+          <a href="/">이벤트/쿠폰</a>
+        </li>
+        <li class="link-zone-list">
+          <a href="/">기획전</a>
+        </li>
+        <li class="link-zone-list">
+          <a href="/">여행티켓</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

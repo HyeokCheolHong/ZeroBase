@@ -1,0 +1,29 @@
+/*
+Pseudo-Class Selector
+(가상 클래스 선택자)
+*/
+
+/* selector:(조건)
+selector중에 조건을 만족하는 요소들 */
+/* selector:____ {
+    property: value;
+} */
+
+/* 1. first-child */
+li:first-child {
+    color: green;
+}
+
+.movie:first-child {
+    font-size: 42px;
+}
+
+/* 2. last-child */
+span:last-child {
+    color: tomato;
+}
+
+/* 3. nth-child() */
+li:nth-child(3) {
+    color: hotpink;
+}

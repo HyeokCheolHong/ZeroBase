@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <section class="section">
+    <!-- section : 의미가 있는 (시멘틱 태그)-->
+    <div class="title">
+      <h2>About</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat deserunt odit odio deleniti, illo quidem libero
+        ducimus dolorem temporibus, blanditiis esse. Facilis fugit id minima architecto repellendus asperiores,
+        provident quibusdam!
+      </p>
+    </div>
+    <div class="about-center section-center">
+      <!-- 사진과 글 들어가는 div 생성 -->
+      <!-- 해당 div의 class로 about-center와 section-center 생성 -->
+      <article class="about-img">
+        <!-- 이미지가 들어가는 article(구역) 설정 -->
+        <img src="./image.jpg" alt="image">
+        <!-- src : 이미지 주소 / alt : 이미지가 표기 안될때 대체 글 -->
+      </article>
+      <article class="about">
+        <!-- about이라는 article(구역) 설정 -->
+        <div class="btn-container">
+          <!-- Tab을 할수있는 div 생성 -->
+          <button class="tab-btn active" data-id="history">History</button>
+          <!-- 해당 버튼의 class로 버튼을 명시하는 tab-btn과 눌렀을때 반응하는 active 클래스생성 -->
+          <!-- 해당 버튼의 dataid로 history 작성-->
+          <button class="tab-btn" data-id="vision">Vision</button>
+          <button class="tab-btn" data-id="goals">Goals</button>
+        </div>
+        <div class="about-content">
+          <!-- tab에 따른 글 내용이 적히는 div 생성 -->
+          <div class="content active" id="history">
+            <!-- 해당 div의 class로 content와 선택됬을때 표기할 active 생성 -->
+            <!-- 해당 div의 id로 history 생성 -->
+            <h4>history</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum eos placeat, repudiandae perferendis animi
+              vitae officiis possimus. Inventore obcaecati eveniet, sequi dolores error deleniti dolor, dolorum
+              asperiores dolorem laborum magnam?</p>
+            <!-- history아래 글 내용 -->
+          </div>
+          <div class="content" id="vision">
+            <!-- 해당 div class로 content생성 (active는 하나만 활성화 되야하므로 작성 안함) -->
+            <h4>vision</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum eos placeat, repudiandae perferendis animi
+              vitae officiis possimus. Inventore obcaecati eveniet, sequi dolores error deleniti dolor, dolorum
+              asperiores dolorem laborum magnam?</p>
+          </div>
+          <div class="content" id="goals">
+            <h4>goals</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum eos placeat, repudiandae perferendis animi
+              vitae officiis possimus. Inventore obcaecati eveniet, sequi dolores error deleniti dolor, dolorum
+              asperiores dolorem laborum magnam?</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <script src="./script.js"></script>
+</body>
+
+</html>

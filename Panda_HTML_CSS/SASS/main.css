@@ -1,0 +1,151 @@
+@charset "UTF-8";
+body .box {
+  border: 1px solid black;
+}
+
+body .box p {
+  color: red;
+}
+
+body .box {
+  border: 1px solid black;
+}
+body .box p {
+  color: red;
+}
+
+body .box1 {
+  width: 100%;
+  background-color: black;
+  color: gray;
+}
+body .box1:hover {
+  background-color: white;
+}
+
+body .box2 {
+  width: 100%;
+  background-color: #00498C;
+  color: white;
+}
+
+#test {
+  color: #00498C;
+}
+
+body div div {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+body div div:nth-of-type(1) {
+  background-color: #7fffd4;
+}
+body div div:nth-of-type(2) {
+  background-color: #19ffb2;
+}
+body div div:nth-of-type(3) {
+  background-color: #e5fff6;
+}
+body div div:nth-of-type(4) {
+  background-color: aquamarine;
+}
+body div div:nth-of-type(5) {
+  background-color: #8cf2d0;
+}
+body div div:nth-of-type(6) {
+  background-color: #7feaff;
+}
+body div div:nth-of-type(7) {
+  background-color: rgba(127, 255, 212, 0.5);
+}
+
+.btn, .btn-1 {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: inherit;
+  border: 1px solid lightgray;
+  border-radius: 14px;
+}
+
+/*
+기본작성방법
+.btn-1 {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: inherit;
+    border: 1px solid red;
+    border-radius: 14px;
+    color: red;
+    font-weight: bold;
+}
+*/
+.btn-1 {
+  border: 1px solid red;
+  color: red;
+  font-weight: bold;
+}
+
+.btn-4, .btn-3 {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: inherit;
+  border: 1px solid lightgray;
+  border-radius: 14px;
+}
+
+.btn-3 {
+  border: 1px solid blue;
+  color: blue;
+  font-weight: bold;
+}
+
+.btn-4 {
+  border: 1px solid green;
+  color: green;
+  font-weight: bold;
+}
+
+.btn-11 {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: inherit;
+  border: 1px solid lightgray;
+  border-radius: 14px;
+  font-weight: bold;
+  border: 1px solid red;
+  color: red;
+}
+
+.btn-12 {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: inherit;
+  border: 1px solid lightgray;
+  border-radius: 14px;
+  font-weight: bold;
+  border: 1px solid blue;
+  color: blue;
+}
+
+/*
+border-color는 기본값을 적용하고 font-color만 변경하고싶을경우 $font-color을 따로 명시하여야함
+.btn-11 {
+    @include btn-10($font-color : red);
+}
+*/
+.box-10 {
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+  font: italic small-caps bold 16px/2 cursive;
+}
+
+.box-11 {
+  width: 150px;
+  height: 100px;
+  border: 1px solid red;
+}/*# sourceMappingURL=main.css.map */

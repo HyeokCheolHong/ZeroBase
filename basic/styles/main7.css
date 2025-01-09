@@ -1,0 +1,10 @@
+/*
+Selector Combinators
+(선택자 결합)
+
+ 하위(), 자식(>), 형제 선택자, 그룹화
+*/
+
+#List > li:last-of-type {
+    color: red;
+}

@@ -1,0 +1,24 @@
+/*
+Pseudo-Class Selector
+(가상 클래스 선택자)
+
+ hover, active, focus
+HTML 요소에 상태에 따라 스타일을 변경
+할 수 있는 동적 가상 클래스 선택자 
+*/
+
+input[type=button] {
+    background-color: skyblue;
+}
+
+input[type=button]:hover {
+    background-color: teal;
+}
+
+input[type=button]:active {
+    background-color: red;
+}
+
+input[type=text]:focus {
+    background-color: blue;
+}

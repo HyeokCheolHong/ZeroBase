@@ -1,0 +1,16 @@
+/*
+Pseudo-Element Selector
+(가상 요소 선택자)
+
+ first-letter, first-line, selection
+*/
+
+.lorem::selection {
+    background-color: red;
+    color: white;
+}
+.lorem1::selection {
+    background-color: blue;
+    color: black;
+}
+

@@ -1,0 +1,246 @@
+// 수작업 구조
+body .box {
+    border: 1px solid black;
+}
+
+body .box p {
+    color: red;
+}
+
+
+// nesting 구조
+body {
+    .box {
+        border: 1px solid black;
+
+        p {
+            color: red;
+        }
+    }
+}
+
+// 기초문법
+body {
+    .box1 {
+        width: 100%;
+        background-color: black;
+        color: gray;
+
+        &:hover {
+            background-color: white;
+        }
+
+        // &를 사용함으로써 부모를 의미
+    }
+
+    //  .box1:hover {background-color: white;}
+}
+
+// 변수
+// $ : $+"작명" : "저장할 내용";
+$primary-color: #333;
+$color: #00498C;
+$color1: #7fffd4;
+
+body {
+    .box2 {
+        width: 100%;
+        background-color: $color;
+        color: white;
+    }
+}
+
+#test {
+    color: $color;
+}
+
+//색깔과 관련된 bilt in
+
+body {
+    div {
+        div {
+
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: inline-block;
+            // 한줄로 표현
+            margin: 10px;
+            text-align: center;
+
+            &:nth-of-type(1) {
+                // basic
+                background-color: $color1;
+            }
+
+            &:nth-of-type(2) {
+                //darken : 어둡게
+                background-color: darken($color1, 20%);
+                // darken(색상, 어두운정도%)
+            }
+
+            &:nth-of-type(3) {
+                // lighten : 밝게
+                background-color: lighten($color1, 20%);
+                // lighten(색상, 밝은정도%)
+                // hover로 되었을때 주로 사용
+            }
+
+            &:nth-of-type(4) {
+                // saturate : 더 선명하게(높은 채도)
+                background-color: saturate($color1, 20%);
+                // satuate(색상, 채도%)
+            }
+
+            &:nth-of-type(5) {
+                // desaturate : 더 흐리게(낮은 채도)
+                background-color: desaturate($color1, 20%);
+                // desatuate(색상, 채도%)
+            }
+
+            &:nth-of-type(6) {
+                // adjust-hue : 명도 변경
+                background-color: adjust-hue($color1, 30%);
+                // adjust-hue(색상, 명도%)
+            }
+
+            &:nth-of-type(7) {
+                // rgba : alpha값 변경
+                background-color: rgba($color1, 0.5);
+                // rgba(색상, opacity(투명도 0~1) 변경%)
+            }
+        }
+    }
+}
+
+// extend(확장) : css 스타일 확장
+
+.btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: inherit;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+}
+
+/*
+기본작성방법
+.btn-1 {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: inherit;
+    border: 1px solid red;
+    border-radius: 14px;
+    color: red;
+    font-weight: bold;
+}
+*/
+
+// extend 사용 방법
+.btn-1 {
+    @extend.btn;
+    // class btn을 확장하여 사용하겠다
+    border: 1px solid red;
+    color: red;
+    font-weight: bold;
+}
+
+// % : 임시 클래스
+// sass에서만 btn-3 or btn-4의 편한 사용을 위해 btn-2라는 공통 임시 클래스를 생성
+%btn-2 {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: inherit;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+}
+
+.btn-3 {
+    @extend %btn-2;
+    border: 1px solid blue;
+    color: blue;
+    font-weight: bold;
+}
+
+.btn-4 {
+    @extend %btn-2;
+    border: 1px solid green;
+    color: green;
+    font-weight: bold;
+}
+
+
+// mixin : 변수랑 유사한 기능을 제공
+// mixin 변수명($border-color, $font-color)
+@mixin btn-10($border-color, $font-color) {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: inherit;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+    font-weight: bold;
+
+    border: 1px solid $border-color;
+    color: $font-color;
+}
+
+// border-color, font-color 을 명시했을경우 include의 값을 명시해줘야함
+// but (mixin 변수명($border-color : black, $font-color : black) 명시하지 않을경우 기본값 black으로 적용
+
+.btn-11 {
+    @include btn-10(red, red);
+}
+
+.btn-12 {
+    @include btn-10(blue, blue);
+}
+
+/*
+border-color는 기본값을 적용하고 font-color만 변경하고싶을경우 $font-color을 따로 명시하여야함
+.btn-11 {
+    @include btn-10($font-color : red);
+}
+*/
+
+// operator : 연산자 [calc (+, -*, /)]
+.box-10 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    font: italic small-caps bold 16px/2 cursive;
+}
+
+// / : css에서 기본 사용중일경우 연산자로 사용이 안됨
+// 방법 1
+.box-11 {
+    width: 100px + 100px / 2;
+    // /의 경우 앞에 + 가 있기 때문에 연산자로 인식
+    height: 100px;
+    border: 1px solid red;
+}
+
+// 방법 2
+// @use "sass:math";
+
+// .box-12 {
+//     width: math.div(200px, 2);
+//     height: 100px;
+//     border: 1px solid red;
+
+// } 
+
+
+// use 사용하기
+// @use "./_test.scss";
+
+// .box-20 {
+//     color: _test.$변수;
+// }
+
+// 반복문, 가정문(조건문), 변수 : 배열, 오브젝트
+
+// @for $i from 1 through 10 {
+//     .box-30:nth-of-type(#($i)) {
+//         width: 100px;
+//     }
+// }

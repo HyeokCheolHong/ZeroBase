@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- form tag 사용자와 웹사이트를 소통할수 있게하는 기본적인 HTML -->
+    <form action="./result.html" method="get">
+        <!-- result.html에 응답요청 및 해당 form은 main.html의 data를 result.html이 받는역할 -->
+        <p>
+            ID : <input name="id" type="text">
+            <!-- 사용자가 ID창에 입력시 해당 내용은 name에 기록되며 type은 text -->
+        </p>
+        <p>
+            PW : <input name="password" type="password">
+            <!-- 사용자가 PW창에 입력시 해당 내용은 name에 기록되며 type은 해당문자를 별표표시 -->
+        </p>
+        <input type="submit" value="로그인">
+        <!-- 누를수있는 버튼 submit(제출가능) / 내용:로그인 -->
+        <p>
+            <input type="text" name="id_1" placeholder="id를 입력해주세요">
+            <!-- 사용자로부터 data를 받아들이는데 구분자는 name="id_1"이고 type은 text형식 / placeholder : 사용자가 어떤내용을 작성할지 미리보기형식으로 알려줌-->
+            <br>
+            <!-- 엔터 -->
+            <input type="password" name="pw_1" placeholder="pw를 입력해주세요">
+            <!-- 사용자로부터 data를 받아들이는데 구분자는 name="pw_1"이고 type은 password형식-->
+            <br>
+            <input type="email" name="email_1" placeholder="email를 입력해주세요">
+            <!-- 사용자로부터 data를 받아들이는데 구분자는 name="email_1"이고 type은 email형식-->
+            <br>
+
+            <input type="submit" value="로그인" />
+            <!-- 누를수있는 버튼 submit(제출가능) / 내용:로그인 -->
+            <input type="button" value="로그인" />
+            <!-- form제출 불가능한 버튼 생성 -->
+
+            <button type="submit">로그인</button>
+            <!-- form이 제출됨 -->
+            <button type="button">로그인</button>
+            <!-- form이 제출되지 않음 -->
+
+            <br>
+            <br>
+
+            <select name="color">
+                <!-- 선택지의 이름 : color -->
+                <option value="red">빨간색</option>
+                <!-- select 선택지 중에 값이 red인 내용 : 빨간색 -->
+                <option value="blue">파란색</option>
+                <!-- select 선택지 중에 값이 blue인 내용 : 파란색 -->
+                <option value="green">초록색</option>
+                <!-- select 선택지 중에 값이 green인 내용 : 초록색 -->
+            </select>
+            <!-- 선택지중에서 사용자가 하나만 선택하려고 할때(dropdown 방식) -->
+            <select name="color" multiple>
+                <!-- 선택지의 이름 : color -->
+                <option value="red">빨간색</option>
+                <!-- select 선택지 중에 값이 red인 내용 : 빨간색 -->
+                <option value="blue">파란색</option>
+                <!-- select 선택지 중에 값이 blue인 내용 : 파란색 -->
+                <option value="green">초록색</option>
+                <!-- select 선택지 중에 값이 green인 내용 : 초록색 -->
+            </select>
+            <!-- 선택지중에서 사용자가 다중 선택하려고 할때(dropdown 방식) -->
+        </p>
+
+        <div>
+            모자 : <input type="checkbox" name="kind" value="cap">
+            상의 : <input type="checkbox" name="kind" value="top">
+            하의 : <input type="checkbox" name="kind" value="bottom">
+            신발 : <input type="checkbox" name="kind" value="shoes">
+            <!-- check박스 형식으로 name은 kind이며 해당 check박스의 값은 다름 -->
+        </div>
+        <div>
+            남자 : <input type="radio" name="sex" value="man">
+            여자 : <input type="radio" name="sex" value="woman">
+            <!-- 선택지중 하나만 선택해야 할 때 name을 동일시 하면 가능 -->
+        </div>
+        <!-- 다중선택을 위한 check box -->
+        <input type="submit" value="로그인" />
+
+        <div>
+            <!-- label tag를 활용하여 input tag가 어떤값을 나타내는지 알려줄 때 -->
+            <label>모자 :
+                <input type="checkbox" name="kind" value="cap">
+                <!-- label : [모자 : ]로 설명이 되는 input tag -->
+            </label>
+            <label for="top">상의 : </label>
+            <input id="top" type="checkbox" name="kind" value="top">
+            <!-- label tag의 for을 이용하여 input tag와 연관관계 적용 -->
+        </div>
+        <input type="submit" value="로그인" />
+
+        <br>
+        <br>
+
+        <div>
+            <label>이메일
+                <input type="email" name="" id="">
+            </label>
+        </div>
+        <div>
+            <label>비밀번호
+                <input type="password" name="" id="">
+            </label>
+        </div>
+        <input type="submit" value="로그인" />
+
+        <br>
+        <br>
+
+        <!-- 블로그 게시글이나 카페 글 작성할때 -->
+        <div>
+            <label>제목 : <br />
+                <input type="text" name="" id="">
+            </label>
+        </div>
+        <div>
+            <label>내용 : <br />
+                <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
+                <!-- 긴 문장을 작성해야 할때 -->
+                <textarea name="" id="" style="width:300px; height:30px; resize:none;"
+                    placeholder="내용을 입력해주세요"></textarea>
+                <!-- 긴 문장을 작성해야 할때 box크기는 지정하고 따로 사이즈 변경이 불가능(resize)-->
+            </label>
+        </div>
+        <br />
+        <input type="submit" value="등록" />
+    </form>
+
+    <br />
+
+    <!-- 사용자 몰래 값을 전달하는 input 태그의 hidden 속성 -->
+    <form action="./result.html" method="get">
+        <input type="text" name="text">
+        <input type="hidden" name="where" value="top_search">
+        <!-- 사용자 입력 없이도 제출시 url에 표기됨 -->
+        <input type="submit" value="제출">
+    </form>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum rem facilis quidem voluptatem fuga qui
+        cumque, enim laboriosam iure vel porro doloribus repellat soluta beatae laudantium, consectetur quod quia
+        quisquam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum rem facilis quidem voluptatem fuga qui
+        cumque, enim laboriosam iure vel porro doloribus repellat soluta beatae laudantium, consectetur quod quia
+        quisquam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum rem facilis quidem voluptatem fuga qui
+        cumque, enim laboriosam iure vel porro doloribus repellat soluta beatae laudantium, consectetur quod quia
+        quisquam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum rem facilis quidem voluptatem fuga qui
+        cumque, enim laboriosam iure vel porro doloribus repellat soluta beatae laudantium, consectetur quod quia
+        quisquam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum rem facilis quidem voluptatem fuga qui
+        cumque, enim laboriosam iure vel porro doloribus repellat soluta beatae laudantium, consectetur quod quia
+        quisquam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum rem facilis quidem voluptatem fuga qui
+        cumque, enim laboriosam iure vel porro doloribus repellat soluta beatae laudantium, consectetur quod quia
+        quisquam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum rem facilis quidem voluptatem fuga qui
+        cumque, enim laboriosam iure vel porro doloribus repellat soluta beatae laudantium, consectetur quod quia
+        quisquam.</p>
+
+    <form action="./result.html" method="get">
+        <input type="text" name="text">
+        <input type="hidden" name="where" value="bottom_search">
+        <input type="submit" value="제출">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+body{
+    height: 1000vh;
+    /* css gradient */
+    background: rgb(2,0,36);
+    background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.scroll-outer{
+    position: fixed;
+    width: 200px;
+    height: 10px;
+    border-radius: 14px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: gray;
+}
+
+.scroll-inner{
+    /* scroll-outer요소 안에서 스크롤의 위치를 파악할수있는 요소 */
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: yellow;
+    border-radius: 14px;
+}

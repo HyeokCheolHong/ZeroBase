@@ -1,0 +1,34 @@
+$bg-color: blue;
+
+body{
+    background-color: $bg-color;
+}
+
+#targetbox{
+    width: auto;
+    display: inline-block;
+    /* h1태그가 차지하는 width만큼만 차지 */
+    border: 1px solid $bg-color;
+    position: relative;
+    overflow: hidden;
+    /* targetbox에서 벗어난 자식요소는 가림 */
+}
+
+#targetbox h1 {
+    margin: 0px;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+#blind {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: $bg-color;
+
+    top: 0;
+    left: 0;
+
+    /* 사용자의 마우스 움직임에따라 박스가 오른쪽으로 밀리는 방식 */
+    /* transform: translateX(100%); */
+}
